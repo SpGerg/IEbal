@@ -15,11 +15,7 @@ namespace IEbal.Handlers
     {
         public static void OnDied(DiedEventArgs args)
         {
-            DamageType type = args.DamageHandler.Type;
-
-            Utils.BlackoutBroadcast(args.Player, "sdgsdgsdgsdgs");
-
-            //крч args.Attacker ?? null не сработает т.к принимает в аргументе string, а args.Attacker.Nickname ?? null будет ошибка т.к args.Attacker нуликом может быть
+            Timing.RunCoroutine(Utils.BlackoutBroadcast(Utils.BuildKillFeed(args.DamageHandler.Type, args.Attacker, args.Player)));
         }
     }
 }

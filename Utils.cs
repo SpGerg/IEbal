@@ -15,8 +15,6 @@ namespace IEbal
     {
         public static IEnumerator<float> BlackoutBroadcast(string message)
         {
-            Timing.KillCoroutines();
-
             for (int i = 100; i > 0; i -= 25)
             {
                 string transparency = i.ToString();
