@@ -15,7 +15,7 @@ namespace IEbal.Handlers
     {
         public static void OnDied(DiedEventArgs args)
         {
-            Timing.RunCoroutine(Utils.BlackoutBroadcast(Utils.BuildKillFeed(args.DamageHandler.Type, args.Attacker, args.Player)));
+            Timing.RunCoroutine(Utils.BlackoutBroadcast(Utils.BuildKillFeed(args.DamageHandler.Type, args.Attacker, args.Player, args.TargetOldRole)));
         }
     }
 }

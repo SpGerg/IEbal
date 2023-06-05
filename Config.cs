@@ -1,5 +1,6 @@
 ﻿using Exiled.API.Enums;
 using Exiled.API.Interfaces;
+using PlayerRoles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,10 +28,18 @@ namespace IEbal
 
         public string LeverDisabled { get; set; } = "Рычаг боеголовки выключён";
 
-        public Dictionary<DamageType, string> Translate { get; set; } = new Dictionary<DamageType, string>
+        public Dictionary<DamageType, string> TranslateReasons { get; set; } = new Dictionary<DamageType, string>
         {
             { DamageType.Unknown, "Неизвестно" },
             { DamageType.Warhead, "Боеголовка" }
+        };
+
+        public Dictionary<RoleTypeId, string> TranslateRoles { get; set; } = new Dictionary<RoleTypeId, string>
+        {
+            { RoleTypeId.ClassD, "класс д" },
+            { RoleTypeId.Scientist, "задрот" },
+            { RoleTypeId.Scp096, "орун" },
+            { RoleTypeId.Tutorial, "админ" }
         };
     }
 }
